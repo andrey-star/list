@@ -103,23 +103,23 @@ public:
             return &static_cast<node_val *>(ptr)->value;
         }
 
-        list_iterator operator++() &{
+        list_iterator operator++() {
             ptr = ptr->next;
             return *this;
         }
 
-        const list_iterator operator++(int) &{
+        const list_iterator operator++(int) {
             list_iterator copy = *this;
             ++*this;
             return copy;
         }
 
-        list_iterator operator--() &{
+        list_iterator operator--() {
             ptr = ptr->prev;
             return *this;
         }
 
-        list_iterator operator--(int) &{
+        list_iterator operator--(int) {
             list_iterator copy = *this;
             --*this;
             return copy;
