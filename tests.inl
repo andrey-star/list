@@ -1,4 +1,4 @@
-#include "gtest/gtest.h"
+#include <gtest/gtest.h>
 
 #include "fault_injection.h"
 
@@ -889,11 +889,11 @@ TEST(correctness, clear_empty)
     c.clear();
     EXPECT_TRUE(c.empty());
 }
-    
+
 TEST(correctness, clear)
 {
     counted::no_new_instances_guard g;
-    
+
     container c;
     mass_push_back(c, {1, 2, 3, 4});
     c.clear();
@@ -907,7 +907,7 @@ TEST(fault_injection, push_back)
 {
     faulty_run([] {
         counted::no_new_instances_guard g;
-    
+
         container c;
         mass_push_back(c, {1, 2, 3, 4});
     });
@@ -917,20 +917,12 @@ TEST(fault_injection, assignment_operator)
 {
     faulty_run([] {
         counted::no_new_instances_guard g;
-    
+
         container c;
         mass_push_back(c, {1, 2, 3, 4});
         container c2;
         mass_push_back(c2, {5, 6, 7, 8});
-        try
-        {
-            c2 = c;
-        }
-        catch (...)
-        {
-            expect_eq(c2, {5, 6, 7, 8});
-            throw;
-        }
+        c2 = c;
         expect_eq(c2, {1, 2, 3, 4});
     });
 }
