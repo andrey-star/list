@@ -9,8 +9,5 @@ add_subdirectory(gtest)
 
 add_library(counted counted.h counted.cpp fault_injection.h fault_injection.cpp list.cpp)
 
-add_executable(std std.cpp)
-target_link_libraries(std counted ../../Desktop/year2018-list-testing-master/gtest)
-
 add_executable(list-testing list.cpp list.h)
 target_link_libraries(list-testing counted gtest)
