@@ -1,4 +1,4 @@
-#include "../../Desktop/year2018-list-testing-master/gtest/gtest.h"
+#include "gtest/gtest.h"
 
 #include "fault_injection.h"
 

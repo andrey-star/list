@@ -1,5 +1,5 @@
 #include "counted.h"
-#include "../../Desktop/year2018-list-testing-master/gtest/gtest.h"
+#include "gtest/gtest.h"
 
 counted::counted(int data)
     : data(data)
