@@ -195,18 +195,6 @@ public:
         return iterator(res);
     }
 
-    iterator erase(const_iterator first, const_iterator last) {
-        const_iterator i = first;
-        for (; i != last;) {
-            const_iterator j = ++i;
-            --i;
-            erase(i);
-            i = j;
-        }
-
-        return iterator(last.ptr);
-    }
-
     T &back() {
         return static_cast<node_val *>(fake.prev)->value;
     }
