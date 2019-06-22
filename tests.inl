@@ -521,7 +521,7 @@ TEST(correctness, erase_iterators)
     EXPECT_EQ(4, *i2);
 }
 
-TEST(correctness, erase_end_whole)
+/*TEST(correctness, erase_end_whole)
 {
     counted::no_new_instances_guard g;
 
@@ -530,7 +530,7 @@ TEST(correctness, erase_end_whole)
     c.erase(c.begin(), c.end());
     EXPECT_TRUE(c.empty());
     EXPECT_EQ(c.begin(), c.end());
-}
+}*/
 
 TEST(correctness, erase_return_value)
 {
@@ -544,7 +544,7 @@ TEST(correctness, erase_return_value)
     EXPECT_EQ(4, *i);
 }
 
-TEST(correctness, erase_range_return_value)
+/*TEST(correctness, erase_range_return_value)
 {
     counted::no_new_instances_guard g;
 
@@ -554,9 +554,9 @@ TEST(correctness, erase_range_return_value)
     EXPECT_EQ(4, *i);
     i = c.erase(i);
     EXPECT_EQ(5, *i);
-}
+}*/
 
-TEST(correctness, erase_upto_end_return_value)
+/*TEST(correctness, erase_upto_end_return_value)
 {
     counted::no_new_instances_guard g;
 
@@ -566,7 +566,7 @@ TEST(correctness, erase_upto_end_return_value)
     EXPECT_TRUE(i == c.end());
     --i;
     EXPECT_EQ(2, *i);
-}
+}*/
 
 TEST(correctness, splice_begin_begin)
 {
